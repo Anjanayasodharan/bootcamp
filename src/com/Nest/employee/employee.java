@@ -1,10 +1,16 @@
 package com.Nest.employee;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class employee {
     public static void main(String[] args){
         int choice;
+        String empName;
+        ArrayList<String> empList =new ArrayList<>();
+
+
+
         while(true)
         {
             System.out.println("Select an option");
@@ -18,10 +24,18 @@ public class employee {
             switch (choice)
             {
                 case 1:
-                    System.out.println("add employee");
+                    System.out.println("enter the name of employee");
+                    empName=opt.next();
+                    empList.add(empName);
                     break;
                 case 2:
-                    System.out.println("view employee");
+                    if(empList.size()==0)
+                    {
+                        System.out.println("no employees added");
+                    }
+                    else {
+                        System.out.println(empList);
+                    }
                     break;
 
                 case 3:
