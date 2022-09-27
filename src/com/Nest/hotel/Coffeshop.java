@@ -1,6 +1,7 @@
 package com.Nest.hotel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Coffeshop {
@@ -42,9 +43,11 @@ public class Coffeshop {
 
         Coffeshop food = new Coffeshop(10, 15, 20, 10, 25);
         Coffeshop takeaway = new Coffeshop(15, 20, 25, 15, 30);
+        Scanner s = new Scanner(System.in);
+        HashMap<String,String>map=new HashMap<String,String>();
+        ArrayList<String> transactionList=new ArrayList<>();
         int y;
 
-        Scanner s = new Scanner(System.in);
 
         System.out.println("enter the choice");
 
@@ -122,7 +125,6 @@ public class Coffeshop {
                     System.out.println("6.BILL");
                     System.out.println("7.Clear BILL");
                     System.out.println("8.exit");
-
                     int m = s.nextInt();
 
                     switch (m) {
@@ -158,12 +160,20 @@ public class Coffeshop {
                         case 7:
                             total = 0;
                             System.out.println("Bill reseted");
+                            map.put("customer","Anjana");
+                            map.put("amount","123");
+                            map.put("Anjana","Dine In");
+                            transactionList.add(map);
+                            System.out.println("Total is"+sum);
+                            int sum=0;
+                            System.exit(0);
                             break;
                         case 8:
                             System.exit(0);
                             break;
                         default:
                             System.out.println("invalid input");
+
 
                     }
                 }
